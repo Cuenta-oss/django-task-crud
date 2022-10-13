@@ -1,6 +1,3 @@
-from cProfile import label
-from dataclasses import fields
-from tkinter.ttk import Label, Widget
 from django import forms
 from .models import modelTask
 
