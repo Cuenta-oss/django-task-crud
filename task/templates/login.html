@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login | CRUD
+{% endblock title %}
+
+
+{% block main %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 offset-md-4">
+            <form action="" method="post" class="card card-body">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="text-muted fw-bold">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Ej. Jhon">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="text-muted fw-bold">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="**********">
+                </div>
+                <div class="mb-3">
+                    {{error}}
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main %}

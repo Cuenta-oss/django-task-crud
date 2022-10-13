@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Edit task | CRUD
+{% endblock title %}
+
+
+{% block main %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 offset-md-4">
+            <form action="" method="POST" class="card card-body">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">UPDATE</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main %}

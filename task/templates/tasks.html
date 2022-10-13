@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Tasks | CRUD DJANGO
+{% endblock title %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      {% if user.is_authenticated %}
+      <div class="row">
+        {% for datas in data %}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card mt-3">
+            <div class="card-header">
+              Task
+            </div>
+            <div class="card-body">
+              
+              {% if datas.important %}
+              <h3 class="card-title text-danger">{{datas.title}}</h3>
+              <!-- <p class="card-text">{{datas.description}}</p> -->
+              {% else %}
+              <h3 class="card-title">{{datas.title}}</h3>
+              {% endif %}
+              <p class="card-text">{{datas.description}}</p>
+            </div>
+            <a href="{% url 'task_detail' datas.id %}" class="btn btn-primary m-2">Ver más</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="alert alert-primary alert-dismissible fade show mt-5" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>Inicia sesión</strong> <a href="{% url 'login' %}">aquí</a>
+      </div>
+      <script>
+        var alertList = document.querySelectorAll('.alert');
+        alertList.forEach(function (alert) {
+          new bootstrap.Alert(alert)
+        })
+      </script>
+      {% endif %}
+    </div>
+    <div class="col-4 mt-3">
+      <a href="{% url 'task_completed' %}" class="btn btn-primary">Ver tareas completadas</a>
+    </div>
+  </div>
+
+</div>
+{% endblock main %}

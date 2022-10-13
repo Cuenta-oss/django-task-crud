@@ -1,0 +1,25 @@
+h1{
+    color: rgb(54, 53, 53);
+}
+.django{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(7, 92, 7);
+}
+
+.django:hover{
+    color: rgb(56, 141, 56);
+}
+
+.bootstrap{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.bootstrap:hover{
+    color: rgb(166, 93, 235);
+    cursor: pointer;
+}
+.error{
+    color: rgb(243, 124, 124);
+}
